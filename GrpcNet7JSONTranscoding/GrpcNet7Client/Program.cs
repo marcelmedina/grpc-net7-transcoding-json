@@ -1,7 +1,6 @@
 ﻿using Grpc.Net.Client;
 using System.Text.Json;
 using GrpcNet7JSONTranscoding.Protos;
-using System.Net.Http;
 
 var userId = 1;
 
