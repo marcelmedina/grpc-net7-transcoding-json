@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option csharp_namespace = "GrpcNet7JSONTranscoding.Protos";
+
+package user;
+
+import "address.proto";
+
+service UserService {
+	rpc GetUserDetails(UserRequest) returns (UserResponse) {
+		option (google.api.http) = {
+			get: "/user/{user_id}"
+		};
+	}
+}
+
+message UserRequest {
+	int32 user_id = 1;
+}
+
+message UserResponse {
+	int32 user_id = 1;
+	string first_name = 2;
+	string last_name = 3;
+	address.Address address = 4;
+}
